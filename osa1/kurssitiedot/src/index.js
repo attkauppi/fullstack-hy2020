@@ -56,7 +56,7 @@ const Total = (props) => {
 }
 
 const App = () => {
-    const course = 'Half Stack application development'
+    // const course = 'Half Stack application development'
 
     /* const part1 = 
 
@@ -67,7 +67,26 @@ const App = () => {
     const part3 = 
     const exercises3 = 14 */
 
-    const parts = [
+    // t. 1.5
+    const course = {
+        name: 'Half Stack application development',
+        parts: [
+          {
+            name: 'Fundamentals of React',
+            exercises: 10
+          },
+          {
+            name: 'Using props to pass data',
+            exercises: 7
+          },
+          {
+            name: 'State of a component',
+            exercises: 14
+          }
+        ]
+      }
+
+   /*  const parts = [
         {
             name: 'Fundamentals of React',
             exercises: 10
@@ -83,9 +102,9 @@ const App = () => {
             exercises: 14
         }
 
-    ]
+    ] */
 
-    console.log("part 0:n exercises: ", parts[0].exercises)
+    console.log("part 0:n exercises: ", course.parts[0].exercises)
 
     
 
@@ -110,10 +129,10 @@ const App = () => {
   
     return (
       <div>
-        <Header name={course} />
+        <Header name={course.name} />
         {/* <Content name1={part1} ex1={exercises1} name2={part2} ex2={exercises2} name3={part3} ex3={exercises3}/> */}
-        <Content taulukko = {parts}/>
-        <Total number={parts} />
+        <Content taulukko = {course.parts}/>
+        <Total number={course.parts} />
       </div>
     )
   }
