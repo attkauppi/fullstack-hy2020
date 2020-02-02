@@ -41,10 +41,17 @@ const Content = (props) => {
 }
 
 const Total = (props) => {
-    const number = props
-    console.log('number: ', props)
+    //const number = props.parts
+
+    console.log("props part 0: ", props.number[0].exercises)
+
+    //console.log('number: ', number)
+    const sum = props.number[0].exercises + props.number[1].exercises + props.number[2].exercises;
+
+    console.log('sum: ', sum)
+    //console.log('number: ', props)
     return (
-        <p>Number of exercises {props.number}</p>
+        <p>Number of exercises {sum}</p>
     )
 }
 
@@ -60,25 +67,32 @@ const App = () => {
     const part3 = 
     const exercises3 = 14 */
 
-    const part1 = {
-        name: 'Fundamentals of React',
-        exercises: 10
-    }
+    const parts = [
+        {
+            name: 'Fundamentals of React',
+            exercises: 10
+        },
+    
+        {
+            name: 'Using props to pass data',
+            exercises: 7
+        },
+    
+        {
+            name: 'State of a component',
+            exercises: 14
+        }
 
-    const part2 = {
-        name: 'Using props to pass data',
-        exercises: 7
-    }
+    ]
 
-    const part3 = {
-        name: 'State of a component',
-        exercises: 14
-    }
+    console.log("part 0:n exercises: ", parts[0].exercises)
 
-    const t = [part1, part2, part3]
+    
 
-    const number = part1.exercises + part2.exercises + part3.exercises;
-    console.log('number2: ', number)
+    //const t = [part1, part2, part3]
+
+    //const number = part1.exercises + part2.exercises + part3.exercises;
+    //console.log('number2: ', number)
 
     
 
@@ -98,8 +112,8 @@ const App = () => {
       <div>
         <Header name={course} />
         {/* <Content name1={part1} ex1={exercises1} name2={part2} ex2={exercises2} name3={part3} ex3={exercises3}/> */}
-        <Content taulukko = {t}/>
-        <Total number={number} />
+        <Content taulukko = {parts}/>
+        <Total number={parts} />
       </div>
     )
   }
